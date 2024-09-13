@@ -352,6 +352,11 @@ func (db *PostgreSQLDBRepository) DescribeDatabaseTableBySchema(ctx context.Cont
 }
 
 func (db *PostgreSQLDBRepository) DescribeForeignKeysBySchema(ctx context.Context, schemaName string) ([]*ForeignKey, error) {
+	if true {
+		return nil, nil
+	}
+
+	// TODO(patrick.pichler): figure out why this is soooo sloooow
 	rows, err := db.Conn.QueryContext(
 		ctx,
 		`
